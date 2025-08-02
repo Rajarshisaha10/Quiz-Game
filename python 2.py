@@ -29,3 +29,7 @@ data['lemmatized'] = data['tokensized'].apply(lambda tokens: [lemmatizer.lemmati
 tokens_clean = sum(data['lemmatized'], [])
 unigrams = pd.Series(nltk.ngrams(tokens_clean, 1)).value_counts()
 print(unigrams[0:10])
+unigrams[0:10].sort_values().plot.barh(color='lightsalmon', width=.9, figsize=(12, 8))
+plt.title('10 Most Frequently Occuring Unigrams')
+plt.ylabel('Unigram')
+plt.xlabel('# of Occurances')
