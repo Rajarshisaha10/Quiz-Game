@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Young's Double Slit Experiment - Complete Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            color: #f0f0f0;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        .navigation {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .nav-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin: 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #ee5a52, #ff6b6b);
+        }
+
+        .nav-btn.active {
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: #34495e;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 1.5rem 0;
+            border-left: 5px solid #3498db;
+        }
+
+        .experiment-setup {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .setup-diagram {
+            width: 100%;
+            height: 300px;
+            background: #2c3e50;
+            border-radius: 10px;
+            position: relative;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .light-source {
+            position: absolute;
+            left: 50px;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            background: #f39c12;
+            border-radius: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 0 20px #f39c12;
+        }
+
+        .light-beam {
+            position: absolute;
+            left: 70px;
+            top: 50%;
+            width: 200px;
+            height: 4px;
+            background: linear-gradient(90deg, #f39c12, rgba(243, 156, 18, 0.3));
+            transform: translateY(-50%);
+            animation: pulse 2s infinite;
+        }
+
+        .slit-barrier {
+            position: absolute;
+            left: 280px;
+            top: 80px;
+            width: 20px;
+            height: 140px;
+            background: #7f8c8d;
+            border-radius: 5px;
+        }
+
+        .slit1, .slit2 {
+            position: absolute;
+            left: 280px;
+            width: 20px;
+            height: 20px;
+            background: #2c3e50;
+            border: 2px solid #f39c12;
+        }
+
+        .slit1 { top: 110px; }
+        .slit2 { top: 160px; }
+
+        .screen {
+            position: absolute;
+            right: 80px;
+            top: 50px;
+            width: 15px;
+            height: 200px;
+            background: #ecf0f1;
+            border-radius: 5px;
+        }
+
+        .interference-pattern {
+            position: absolute;
+            right: 65px;
+            top: 50px;
+            width: 30px;
+            height: 200px;
+            background: repeating-linear-gradient(
+                0deg,
+                #2c3e50 0px,
+                #2c3e50 10px,
+                #ecf0f1 10px,
+                #ecf0f1 20px
+            );
+            opacity: 0.8;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .wave-animation {
+            width: 100%;
+            height: 200px;
+            background: #34495e;
+            border-radius: 10px;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wave {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #3498db;
+            transform-origin: left center;
+            animation: wave 3s infinite linear;
+        }
+
+        @keyframes wave {
+            0% { transform: translateY(-50%) scaleX(0); }
+            100% { transform: translateY(-50%) scaleX(1); }
+        }
+
+        .formula-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .formula {
+            font-size: 1.8rem;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .interactive-controls {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .control-group {
+            margin: 1rem 0;
+        }
+
+        .control-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #3498db;
+            cursor: pointer;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .result-card {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .result-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+        }
+
+        .timeline-item {
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            border-left: 5px solid #3498db;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: #3498db;
+            border-radius: 50%;
+        }
+
+        .year {
+            font-weight: bold;
+            color: #3498db;
+            font-size: 1.2rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 10px; }
+            h1 { font-size: 2rem; }
+            .nav-btn { padding: 10px 18px; font-size: 12px; }
+            .section { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Young's Double Slit Experiment</h1>
+            <p class="subtitle">Unveiling the Wave-Particle Duality of Light</p>
+        </header>
+
+        <nav class="navigation">
+            <button class="nav-btn active" onclick="showSection('history')">History</button>
+            <button class="nav-btn" onclick="showSection('theory')">Theory</button>
+            <button class="nav-btn" onclick="showSection('setup')">Experimental Setup</button>
+            <button class="nav-btn" onclick="showSection('results')">Results</button>
+            <button class="nav-btn" onclick="showSection('significance')">Significance</button>
+            <button class="nav-btn" onclick="showSection('interactive')">Interactive Demo</button>
+        </nav>
+
+        <section id="history" class="section active">
+            <h2>Historical Background</h2>
+            
+            <div class="highlight">
+                <p><strong>The Revolutionary Experiment:</strong> In 1801, Thomas Young's double-slit experiment fundamentally changed our understanding of light and laid the groundwork for quantum mechanics.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="year">1801</div>
+                    <h3>Thomas Young's Original Experiment</h3>
+                    <p>Young demonstrated the wave nature of light by showing interference patterns when light passed through two closely spaced slits. This challenged Newton's particle theory of light.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="year">1805</div>
+                    <h3>Publication and Initial Reception</h3>
+                    <p>Young published his findings, initially met with skepticism from the scientific community that favored Newton's corpuscular theory.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="year">1909</div>
+                    <h3>Single Photon Experiments</h3>
+                    <p>Geoffrey Taylor showed that even single photons create interference patterns, revealing the quantum nature of light.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="year">1961</div>
+                    <h3>Electron Double-Slit</h3>
+                    <p>Claus Jönsson demonstrated interference with electrons, proving that matter also exhibits wave properties.</p>
+                </div>
+            </div>
+
+            <p>Thomas Young's experiment was revolutionary because it provided clear evidence that light behaves as a wave. At the time, Sir Isaac Newton's particle theory of light was widely accepted, making Young's wave theory controversial. The experiment showed that when light passes through two parallel slits, it creates an interference pattern on a screen - something that only waves can do.</p>
+        </section>
+
+        <section id="theory" class="section">
+            <h2>Theoretical Foundation</h2>
+            
+            <h3>Wave Theory of Light</h3>
+            <p>The double-slit experiment is based on the principle of superposition of waves. When two waves meet, their amplitudes add together - constructively when they're in phase, destructively when they're out of phase.</p>
+
+            <div class="wave-animation">
+                <div class="wave"></div>
+            </div>
+
+            <h3>Key Concepts</h3>
+            <div class="results-grid">
+                <div class="result-card">
+                    <h4>Coherence</h4>
+                    <p>The light waves must maintain a constant phase relationship for interference to occur.</p>
+                </div>
+                <div class="result-card">
+                    <h4>Superposition</h4>
+                    <p>When waves overlap, their amplitudes add algebraically to produce the resultant wave.</p>
+                </div>
+                <div class="result-card">
+                    <h4>Path Difference</h4>
+                    <p>The difference in distance traveled by light from each slit determines the interference pattern.</p>
+                </div>
+            </div>
+
+            <div class="formula-box">
+                <h3>Mathematical Formulation</h3>
+                <div class="formula">Path Difference = d sin θ</div>
+                <div class="formula">For Constructive Interference: d sin θ = nλ</div>
+                <div class="formula">For Destructive Interference: d sin θ = (n + ½)λ</div>
+                <p>where d = slit separation, θ = angle, λ = wavelength, n = integer</p>
+            </div>
+        </section>
+
+        <section id="setup" class="section">
+            <h2>Experimental Setup</h2>
+            
+            <div class="experiment-setup">
+                <h3>Components of the Experiment</h3>
+                <div class="setup-diagram">
+                    <div class="light-source"></div>
+                    <div class="light-beam"></div>
+                    <div class="slit-barrier"></div>
+                    <div class="slit1"></div>
+                    <div class="slit2"></div>
+                    <div class="screen"></div>
+                    <div class="interference-pattern"></div>
+                </div>
+            </div>
+
+            <h3>Equipment Required</h3>
+            <div class="results-grid">
+                <div class="result-card">
+                    <h4>Light Source</h4>
+                    <p>Coherent monochromatic light (laser) or filtered white light source for clear interference patterns.</p>
+                </div>
+                <div class="result-card">
+                    <h4>Double Slit</h4>
+                    <p>Two parallel slits separated by a distance typically 0.1-1 mm, with slit width much smaller than separation.</p>
+                </div>
+                <div class="result-card">
+                    <h4>Detection Screen</h4>
+                    <p>A screen or detector placed at a distance to observe the interference pattern formed by the light.</p>
+                </div>
+            </div>
+
+            <h3>Procedure</h3>
+            <ol style="font-size: 1.1rem; margin-left: 2rem;">
+                <li>Set up the light source to produce coherent, monochromatic light</li>
+                <li>Place the double-slit apparatus in the path of the light beam</li>
+                <li>Position a screen at an appropriate distance from the slits</li>
+                <li>Observe the interference pattern on the screen</li>
+                <li>Measure the spacing between bright and dark fringes</li>
+                <li>Calculate the wavelength using the interference formula</li>
+            </ol>
+        </section>
+
+        <section id="results" class="section">
+            <h2>Experimental Results</h2>
+            
+            <div class="highlight">
+                <h3>The Interference Pattern</h3>
+                <p>When light passes through both slits simultaneously, an interference pattern of alternating bright and dark fringes appears on the screen. This pattern is direct evidence of the wave nature of light.</p>
+            </div>
+
+            <h3>Observations</h3>
+            <div class="results-grid">
+                <div class="result-card">
+                    <h4>Bright Fringes</h4>
+                    <p>Occur where waves from both slits arrive in phase (constructive interference)</p>
+                </div>
+                <div class="result-card">
+                    <h4>Dark Fringes</h4>
+                    <p>Occur where waves arrive out of phase by π radians (destructive interference)</p>
+                </div>
+                <div class="result-card">
+                    <h4>Central Maximum</h4>
+                    <p>The brightest fringe at the center where path difference is zero</p>
+                </div>
+            </div>
+
+            <h3>Key Measurements</h3>
+            <p>The fringe spacing (β) is given by:</p>
+            <div class="formula-box">
+                <div class="formula">β = λD/d</div>
+                <p>where λ = wavelength, D = distance to screen, d = slit separation</p>
+            </div>
+
+            <h3>The Quantum Paradox</h3>
+            <p>The most fascinating aspect occurs when the experiment is performed with single photons. Even individual photons create the same interference pattern over time, suggesting that each photon somehow passes through both slits simultaneously and interferes with itself!</p>
+
+            <div class="highlight">
+                <p><strong>Observer Effect:</strong> When detectors are placed at the slits to determine which slit the photon passes through, the interference pattern disappears, and the photon behaves like a particle.</p>
+            </div>
+        </section>
+
+        <section id="significance" class="section">
+            <h2>Scientific Significance</h2>
+            
+            <h3>Wave-Particle Duality</h3>
+            <p>The double-slit experiment demonstrates the fundamental principle of wave-particle duality - the concept that quantum objects exhibit both wave and particle characteristics depending on how they are observed.</p>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <h4>Quantum Mechanics Foundation</h4>
+                    <p>This experiment helped establish quantum mechanics and our modern understanding of the microscopic world.</p>
+                </div>
+                <div class="result-card">
+                    <h4>Complementarity Principle</h4>
+                    <p>Niels Bohr's principle that quantum objects have complementary properties that cannot be observed simultaneously.</p>
+                </div>
+                <div class="result-card">
+                    <h4>Measurement Problem</h4>
+                    <p>Raises fundamental questions about the role of observation in quantum mechanics.</p>
+                </div>
+            </div>
+
+            <h3>Modern Applications</h3>
+            <p>The principles demonstrated in YDSE have led to numerous technological advances:</p>
+            <ul style="margin-left: 2rem; font-size: 1.1rem;">
+                <li><strong>Holography:</strong> Creating three-dimensional images using interference patterns</li>
+                <li><strong>Interferometry:</strong> Precise measurements in astronomy and physics</li>
+                <li><strong>Quantum Computing:</strong> Utilizing quantum superposition for computation</li>
+                <li><strong>Laser Technology:</strong> Understanding coherent light properties</li>
+                <li><strong>Electron Microscopy:</strong> High-resolution imaging using electron waves</li>
+            </ul>
+
+            <h3>Philosophical Implications</h3>
+            <p>The experiment challenges our classical intuition about reality and has sparked debates about the interpretation of quantum mechanics, including the many-worlds interpretation, hidden variable theories, and the role of consciousness in measurement.</p>
+        </section>
+
+        <section id="interactive" class="section">
+            <h2>Interactive Demonstration</h2>
+            
+            <div class="interactive-controls">
+                <h3>Adjust Parameters</h3>
+                
+                <div class="control-group">
+                    <label for="wavelength">Wavelength (nm): <span id="wavelengthValue">550</span></label>
+                    <input type="range" id="wavelength" class="slider" min="400" max="700" value="550" oninput="updateValues()">
+                </div>
+                
+                <div class="control-group">
+                    <label for="slitSeparation">Slit Separation (mm): <span id="slitSeparationValue">0.5</span></label>
+                    <input type="range" id="slitSeparation" class="slider" min="0.1" max="2" step="0.1" value="0.5" oninput="updateValues()">
+                </div>
+                
+                <div class="control-group">
+                    <label for="screenDistance">Screen Distance (m): <span id="screenDistanceValue">2</span></label>
+                    <input type="range" id="screenDistance" class="slider" min="0.5" max="5" step="0.1" value="2" oninput="updateValues()">
+                </div>
+            </div>
+
+            <div class="formula-box">
+                <h3>Calculated Results</h3>
+                <div class="formula">Fringe Spacing: <span id="fringeSpacing">2.2 mm</span></div>
+                <div class="formula">Angular Spacing: <span id="angularSpacing">0.63°</span></div>
+            </div>
+
+            <div class="highlight">
+                <p><strong>Try This:</strong> Adjust the sliders above to see how changing the wavelength, slit separation, and screen distance affects the interference pattern spacing!</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2024 Young's Double Slit Experiment Guide. Educational content for understanding quantum mechanics and wave optics.</p>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update navigation buttons
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function updateValues() {
+            const wavelength = document.getElementById('wavelength').value;
+            const slitSeparation = document.getElementById('slitSeparation').value;
+            const screenDistance = document.getElementById('screenDistance').value;
+            
+            // Update display values
+            document.getElementById('wavelengthValue').textContent = wavelength;
+            document.getElementById('slitSeparationValue').textContent = slitSeparation;
+            document.getElementById('screenDistanceValue').textContent = screenDistance;
+            
+            // Calculate fringe spacing: β = λD/d
+            const lambda = wavelength * 1e-9; // Convert nm to m
+            const d = slitSeparation * 1e-3; // Convert mm to m
+            const D = parseFloat(screenDistance); // Already in m
+            
+            const fringeSpacing = (lambda * D / d) * 1000; // Convert to mm
+            const angularSpacing = (lambda / d) * (180 / Math.PI); // Convert to degrees
+            
+            document.getElementById('fringeSpacing').textContent = fringeSpacing.toFixed(2) + ' mm';
+            document.getElementById('angularSpacing').textContent = angularSpacing.toFixed(2) + '°';
+        }
+
+        // Initialize calculations
+        updateValues();
+
+        // Add smooth scrolling animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            const elements = document.querySelectorAll('.result-card, .timeline-item');
+            elements.forEach((el) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
