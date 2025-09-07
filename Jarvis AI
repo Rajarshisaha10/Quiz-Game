@@ -1,0 +1,57 @@
+import speech_recognition as sr
+import os
+import webbrowser
+import pyttsx3
+import datetime
+#webdriver
+def say(text):
+    engine = pyttsx3.init()
+    engine.say(text)
+    engine.runAndWait()
+
+say("Hello, I am Jarvis. How can I assist you today?")
+def takecommand():
+    r = sr.Recognizer()
+    with sr.Microphone(device_index=1) as source:
+        print("Listening...")
+        r.pause_threshold = 1
+        audio = r.listen(source)
+    try:
+        print("Recognizing...")
+        command = r.recognize_google(audio, language='en-in')
+        print(f"User said: {command}\n")
+        return command
+    except Exception as e:
+        print("Say that again please...")
+        return "None"
+    return command.lower()
+while True:
+    text = takecommand()
+    say(text)
+    sites = [
+    ["open google", "https://www.google.com"],
+    ["open youtube", "https://www.youtube.com"],
+    ["open facebook", "https://www.facebook.com"],
+    ["open instagram", "https://www.instagram.com"],
+    ["open twitter", "https://www.twitter.com"],
+    ["open gmail", "https://mail.google.com"],
+    ["open stackoverflow", "https://stackoverflow.com"], 
+    ["open github", "https://github.com"],
+    ["open linkedin", "https://www.linkedin.com"],
+    ["open physics project", "https://physics-qm-project-d1-batch.onrender.com/"]
+]
+
+    for site in sites:
+        if site[0] in text.lower():
+            say(f"Opening {site[0].split()[1].capitalize()}")
+            webbrowser.open(site[1])
+    if "open music" in text.lower():
+        music_dir = "C:\SYSOUND\connect.wav"
+        os.system(f'start {music_dir}')
+    elif "say time" in text.lower():
+        strTime = datetime.datetime.now().strftime("%H:%M:%S")
+        say(f"Sir, the time is {strTime}")
+    elif "exit" in text.lower():
+        say("Goodbye!")
+        break  
+    
