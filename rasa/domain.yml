@@ -1,0 +1,213 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - order_pizza
+  - thank_you
+  - ask_how_are_you
+  - tell_joke
+  - ask_name
+  - ask_age
+  - ask_location
+  - chitchat_about_weather
+  - chitchat_about_hobbies
+  - apologize
+  - praise
+  - ask_help
+  - ask_time
+  - ask_date
+  - ask_who_are_you
+  - chitchat_funny
+  - ask_purpose
+  - ask_date_and_time
+  - start_granny
+
+entities:
+  - food
+
+responses:
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_confirm_order:
+  - text: "Order pizza from Domino's?"
+
+  utter_greet:
+  - text: "Hey! How can I help you today?"
+  - text: "Hi there! What can I do for you?"
+  - text: "Hello! It's great to chat with you."
+  - text: "Hey! What's on your mind?"
+  - text: "Hi! I'm here to help."
+
+  utter_goodbye:
+  - text: "Goodbye! Talk to you later."
+  - text: "Bye! Have a great day ahead."
+  - text: "See you around! Feel free to come back anytime."
+  - text: "Talk to you later. It was nice chatting!"
+  - text: "Bye for now!"
+
+  utter_thank_you:
+  - text: "You're very welcome!"
+  - text: "My pleasure! Glad I could help."
+  - text: "No problem at all!"
+  - text: "Anytime! Let me know if you need anything else."
+  - text: "You're welcome! Happy to assist."
+
+  utter_how_am_i:
+  - text: "As a bot, I don't have feelings, but I'm doing great and ready to assist you!"
+  - text: "I'm functioning perfectly, thank you for asking!"
+  - text: "I'm doing well, thanks. How about you?"
+  - text: "Just helping out. I'm doing good!"
+  - text: "I'm great! Always ready to chat."
+
+  utter_joke:
+  - text: "Why did the scarecrow win an award? Because he was outstanding in his field!"
+  - text: "Why don't scientists trust atoms? Because they make up everything!"
+  - text: "I'm on a seafood diet. I see food, and I eat it."
+  - text: "Did you hear about the restaurant on the moon? Great food, no atmosphere!"
+  - text: "What do you call a fake noodle? An impasta!"
+
+  utter_ask_name:
+  - text: "I am a helpful assistant created by my developers. I don't have a personal name."
+  - text: "I don't have a name, I'm just a bot here to help."
+  - text: "You can just call me assistant."
+  - text: "People just call me 'the bot'."
+  - text: "I am a virtual assistant, and I don't have a name."
+
+  utter_ask_age:
+  - text: "I don't have an age in the human sense. I was created very recently!"
+  - text: "As a bot, I don't age. I'm always as new as my last update."
+  - text: "I don't have a birthday. I'm a machine!"
+  - text: "I was born when my code was written. That's a secret!"
+  - text: "Time is different for me. I don't have a specific age."
+
+  utter_ask_location:
+  - text: "I exist on a server, so I'm everywhere and nowhere at the same time!"
+  - text: "I don't have a physical location."
+  - text: "My home is the cloud!"
+  - text: "I live on a server. It's a bit crowded in there."
+  - text: "I am based in the digital world."
+
+  utter_weather:
+  - text: "I am unable to provide real-time weather information right now."
+  - text: "I can't check the weather, but I hope it's a nice day where you are!"
+  - text: "I'm not connected to the weather service."
+  - text: "I'm just a bot, so I can't check the weather. Sorry about that!"
+  - text: "My code doesn't allow me to tell you the weather."
+
+  utter_hobbies:
+  - text: "I enjoy helping people and processing information. It's what I was made for!"
+  - text: "I spend my time learning new things and chatting with users like you."
+  - text: "My hobby is to learn and to assist. It's fun for me!"
+  - text: "I like to think about and process data."
+  - text: "I don't have hobbies like humans do, but I enjoy our conversation!"
+
+  utter_affirm:
+  - text: "Okay, sounds good."
+  - text: "Great, I'll proceed with that."
+  - text: "Got it."
+  - text: "Perfect, I'll continue."
+  - text: "Confirmed. What's next?"
+
+  utter_deny:
+  - text: "Okay, no problem. What would you like to do instead?"
+  - text: "Alright. We can try something different then."
+  - text: "Understood. I'll change my plan."
+  - text: "Okay, I won't do that."
+  - text: "No worries."
+
+  utter_apologize:
+  - text: "No worries at all."
+  - text: "It's all good, don't worry about it."
+  - text: "That's perfectly fine."
+  - text: "Apology accepted. Let's continue."
+  - text: "No need to apologize."
+
+  utter_praise:
+  - text: "Thank you so much! I'm happy I could help."
+  - text: "That's very kind of you to say!"
+  - text: "I'm glad to hear that! It's my purpose to assist you."
+  - text: "Thank you! Your feedback is much appreciated."
+  - text: "You're too kind!"
+
+  utter_ask_help:
+  - text: "I'm here to help! What can I assist you with?"
+  - text: "Of course. Tell me what you need help with, and I'll do my best."
+  - text: "I can assist you with a variety of things. What's your request?"
+  - text: "I'm ready to help. What do you need?"
+  - text: "How can I be of service?"
+
+  utter_who_are_you:
+  - text: "I am a bot, a large language model trained by Google."
+  - text: "I am an artificial intelligence, designed to assist you with tasks and information."
+  - text: "I am a virtual assistant, a non-human entity created to help with conversations."
+  - text: "I am a bot, powered by Rasa. It's nice to meet you."
+  - text: "I'm an AI. I don't have a physical form or identity like humans do."
+
+  utter_funny:
+  - text: "I'm glad you think so!"
+  - text: "Thanks for the compliment! I'm happy I could entertain you."
+  - text: "Haha! My pleasure."
+  - text: "I'm glad I could make you laugh!"
+  - text: "I'm happy to know that!"
+
+  utter_purpose:
+  - text: "My purpose is to assist you and provide information. I'm here to help!"
+  - text: "I was created to be a conversational partner and an assistant."
+  - text: "I'm designed to help with a wide range of tasks and answer your questions."
+  - text: "My goal is to be a useful and friendly AI."
+  - text: "I'm here to make things easier for you."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+actions:
+  - utter_greet
+  - utter_cheer_up
+  - utter_did_that_help
+  - utter_happy
+  - utter_goodbye
+  - utter_confirm_order
+  - utter_thank_you
+  - utter_how_am_i
+  - utter_joke
+  - utter_ask_name
+  - utter_ask_age
+  - utter_ask_location
+  - utter_weather
+  - utter_hobbies
+  - utter_affirm
+  - utter_deny
+  - utter_apologize
+  - utter_praise
+  - utter_ask_help
+  - utter_who_are_you
+  - utter_funny
+  - utter_purpose
+  - order_food
+  - get_time
+  - get_date
+  - get_date_and_time
+  - start_granny
+
+slots:
+  food:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: food

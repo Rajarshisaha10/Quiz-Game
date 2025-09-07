@@ -1,0 +1,119 @@
+version: "3.1"
+stories:
+# Core Happy Path
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+# Core Sad Path
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+# Pizza Ordering Path
+- story: user orders a pizza with size and toppings
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: order_pizza
+  - action: order_food
+
+# General Conversational Stories
+- story: simple conversation flow
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_who_are_you
+  - action: utter_who_are_you
+  - intent: ask_how_are_you
+  - action: utter_how_am_i
+  - intent: tell_joke
+  - action: utter_joke
+  - intent: thank_you
+  - action: utter_thank_you
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: user asks for help
+  steps:
+  - intent: ask_help
+  - action: utter_ask_help
+
+- story: user asks bot's name
+  steps:
+  - intent: ask_name
+  - action: utter_ask_name
+
+- story: user asks bot's age
+  steps:
+  - intent: ask_age
+  - action: utter_ask_age
+
+- story: user asks bot's location
+  steps:
+  - intent: ask_location
+  - action: utter_ask_location
+
+- story: user asks for time
+  steps:
+  - intent: ask_time
+  - action: get_time
+
+- story: user asks for date
+  steps:
+  - intent: ask_date
+  - action: get_date
+
+- story: user asks bot's purpose
+  steps:
+  - intent: ask_purpose
+  - action: utter_purpose
+
+- story: user compliments the bot
+  steps:
+  - intent: praise
+  - action: utter_praise
+
+- story: user says something is funny
+  steps:
+  - intent: chitchat_funny
+  - action: utter_funny
+
+- story: user asks about weather
+  steps:
+  - intent: chitchat_about_weather
+  - action: utter_weather
+
+- story: user asks about hobbies
+  steps:
+  - intent: chitchat_about_hobbies
+  - action: utter_hobbies
+
+- story: user apologizes to bot
+  steps:
+  - intent: apologize
+  - action: utter_apologize
+
+- story: user says thank you
+  steps:
+  - intent: thank_you
+  - action: utter_thank_you
+
+- story: user asks for date and time
+  steps:
+  - intent: ask_date_and_time
+  - action: get_date_and_time
+
+- story: user starts granny
+  steps:
+  - intent: start_granny
+  - action: start_granny

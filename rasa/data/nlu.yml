@@ -1,0 +1,340 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good bye
+    - see you later
+    - good night
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - bye
+    - talk to you later
+    - have a good day
+    - I'm leaving
+    - I gotta go
+    - catch you later
+    - so long
+    - bye for now
+
+- intent: thank_you
+  examples: |
+    - thanks
+    - thank you
+    - thanks a lot
+    - I appreciate it
+    - that's very kind
+    - thank you so much
+    - awesome, thanks
+    - cheers
+    - I'm grateful
+    - you've been a great help
+
+- intent: ask_how_are_you
+  examples: |
+    - how are you?
+    - how are you doing?
+    - how's it going?
+    - how's your day?
+    - are you okay?
+    - what's new?
+    - feeling good?
+    - how have you been?
+    - how's everything?
+    - you good?
+
+- intent: tell_joke
+  examples: |
+    - tell me a joke
+    - do you know any jokes?
+    - make me laugh
+    - tell me something funny
+    - got any jokes?
+    - I need a laugh
+    - can you tell a joke?
+    - I feel like hearing a joke
+    - tell me one
+    - tell a funny story
+
+- intent: ask_name
+  examples: |
+    - what is your name?
+    - do you have a name?
+    - who are you called?
+    - what's your name?
+    - who should I call you?
+    - do you have a handle?
+    - what's your designation?
+    - what are you named?
+    - can I have your name?
+    - what do people call you?
+
+- intent: ask_age
+  examples: |
+    - how old are you?
+    - what's your age?
+    - when were you born?
+    - are you old?
+    - how many years old are you?
+    - what is your birth year?
+    - tell me your age
+    - age, please
+    - are you a child or an adult?
+    - how old are you really?
+
+- intent: ask_location
+  examples: |
+    - where are you from?
+    - what is your location?
+    - where do you live?
+    - which city are you in?
+    - where are you based?
+    - do you have a home?
+    - what's your current location?
+    - tell me your location
+    - from what country are you?
+    - are you in a server farm?
+
+- intent: chitchat_about_weather
+  examples: |
+    - how is the weather?
+    - what's the weather like?
+    - is it raining outside?
+    - is it hot today?
+    - what's the forecast?
+    - is it sunny?
+    - is it cold?
+    - how's the climate?
+    - tell me about the weather
+    - is it going to snow?
+
+- intent: chitchat_about_hobbies
+  examples: |
+    - what are your hobbies?
+    - what do you do for fun?
+    - do you have any hobbies?
+    - what do you like to do?
+    - what do you do in your free time?
+    - any pastimes?
+    - what do you do when you are not working?
+    - what do you enjoy doing?
+    - tell me about your hobbies
+    - do you have fun?
+
+- intent: affirm
+  examples: |
+    - yes
+    - yup
+    - that's right
+    - correct
+    - exactly
+    - sounds good
+    - sure
+    - absolutely
+    - indeed
+    - that's correct
+
+- intent: deny
+  examples: |
+    - no
+    - nope
+    - not really
+    - I don't think so
+    - nah
+    - that's wrong
+    - incorrect
+    - no way
+    - definitely not
+    - not at all
+
+- intent: apologize
+  examples: |
+    - I am sorry
+    - my apologies
+    - I apologize
+    - forgive me
+    - I'm so sorry
+    - sorry about that
+    - my bad
+    - I didn't mean to
+    - that's my fault
+    - I'm really sorry
+
+- intent: praise
+  examples: |
+    - you're great
+    - you're a good bot
+    - you're smart
+    - you've been a great help
+    - you are awesome
+    - I like you
+    - you're impressive
+    - well done
+    - good job
+    - you're a lifesaver
+
+- intent: ask_help
+  examples: |
+    - I need help
+    - can you help me?
+    - help me please
+    - I'm stuck
+    - can you assist me?
+    - I need some assistance
+    - I have a problem
+    - what can you do?
+    - what help do you offer?
+    - please help
+
+- intent: ask_time
+  examples: |
+    - what time is it?
+    - tell me the time
+    - do you have the time?
+    - what's the current time?
+    - time, please
+    - what is the time now?
+    - could you tell me the time?
+    - is it late?
+    - what's the hour?
+    - current time
+
+- intent: ask_date
+  examples: |
+    - what is the date today?
+    - what's the date?
+    - tell me the date
+    - what day is it today?
+    - is today a holiday?
+    - what's the current date?
+    - date please
+    - what day of the month is it?
+    - today's date
+    - tell me the current date
+
+- intent: ask_date_and_time
+  examples: |
+    - what is the date and time?
+    - tell me the date and time
+    - give me the time and date
+    - what's the current date and time?
+    - date and time please
+
+- intent: ask_who_are_you
+  examples: |
+    - who are you?
+    - what are you?
+    - tell me about yourself
+    - are you a human?
+    - are you an AI?
+    - what do you do?
+    - tell me your purpose
+    - what's your identity?
+    - are you a person?
+    - tell me what you are
+
+- intent: chitchat_funny
+  examples: |
+    - you're funny
+    - that's hilarious
+    - you're so silly
+    - that's a good one
+    - you crack me up
+    - you're a riot
+    - what a funny thing to say
+    - lol
+    - that made me laugh
+    - that's funny
+
+- intent: ask_purpose
+  examples: |
+    - what's your purpose?
+    - why were you made?
+    - what can you do for me?
+    - what's your function?
+    - why are you here?
+    - what are you for?
+    - what is your goal?
+    - what is your job?
+    - what is your reason for existing?
+    - what's your main purpose?
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: order_pizza
+  examples: |
+    - I want to order a [pizza](food)
+    - I'd like to get a [large pizza](food:pizza)
+    - can I get a [cheese burger](food)
+    - order [burger](food)
+    - order [pizza](food)
+- intent: start_granny
+  examples: |
+    - start granny
+    - launch granny
+    - open granny
+    - play granny
+    - run granny
+    - Start granny bro
+
+
+entities:
+  - food
